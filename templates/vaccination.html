@@ -1,0 +1,155 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+Vaccination Booking Page
+
+{% endblock title %}
+{% block body %}
+
+<div class="container mt-3">
+    
+
+    <div class="row">
+      <div class="col-md-1"></div>
+        <div class="col-md-5 mt-1 jumbotron" id="form_entry"  >
+            {% with messages=get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            
+            <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                {{message}}
+            
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
+            
+              {% endfor %}
+              {% endif %}
+              {% endwith %}
+            
+            <form action="/vaccination" method="post">
+
+
+                <h1 class="text-center bg-dark text-white" >VACCINATION SLOT</h1>
+
+                <div class="form-group">
+              
+                  <input type="email" class="form-control" id="email" value={{current_user.email}} name="email" readonly>
+                
+                </div>
+              
+                <div class="form-group">
+                
+                  <input type="text" class="form-control" id="fname" name="fname" placeholder="first Name" required>
+                
+                </div>
+              
+                <div class="form-group">
+                
+                    <input type="text" class="form-control" id="lname" name="lname" placeholder="last Name" required>
+                  
+                  </div>
+               <div class="form-group">
+              
+                          
+                                                    
+              <select class="form-control" id="gender" name="gender"  required>
+                      <option selected>Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Others">Others</option>
+               
+                    </select>
+               </div>
+
+               <div class="form-group">
+                <div class="form-group">
+              
+                          
+                                                    
+                  <select class="form-control" id="vaccine" name="vaccine"  required>
+                          <option selected>select the vaccine</option>
+                          <option value="covaxin">covaxin</option>
+                          <option value="covishield">covishield</option>
+                          <option value="pfizer">pfizer</option>
+                   
+                        </select>
+                   </div>              
+                          
+                                                    
+                <select class="form-control" id="gender" name="dose"  required>
+                        <option selected>select the dose</option>
+                        <option value="dose1">dose 1</option>
+                        <option value="dose2">dose 2</option>
+                        <option value="booster">booster</option>
+                 
+                      </select>
+                 </div>
+ 
+               <div class="form-group">
+                
+                <input type="number" class="form-control" id="age" name="age" placeholder="age" required>
+              
+              </div>
+              
+               <div class="form-group">
+              
+                          
+                                                    
+              <select class="form-control" id="slot" name="slot"  required>
+                      <option selected>Slot</option>
+                      <option value="morning">Morning</option>
+                      <option value="evening">Evening</option>
+                      <option value="night">Night</option>
+               
+                    </select>
+               </div>
+              
+                <div class="form-group">
+                  
+                  <input type="time" class="form-control" name="time" placeholder="Time" required>
+                
+                </div>
+                <div class="form-group">
+                  
+                  <input type="date" class="form-control" name="date" placeholder="date" required>
+                
+                </div>
+
+                <div class="form-group">
+              
+                  <input type="number" class="form-control" id="number" name="number" placeholder="Phone Number" required>
+                
+                </div>
+              
+                <button type="submit" id="btn" class="btn btn-dark  btn-md btn-block">Book</button>
+              </form>
+              
+              
+                
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5 mt-3" >
+            <div class="card" id="card"  style="width: 25rem;">
+                <img src="static/vaccine.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">“The awe of discovering the human body. The honor of being trusted to give advice. The gratitude for helping someone through a difficult illness. These things never grow old.”</p>
+                  <p class="card-text">---DANIELLE OFRI</p>
+                </div>
+              </div>
+         
+
+              
+
+        </div>
+
+
+
+
+
+
+
+
+{% endblock body %}

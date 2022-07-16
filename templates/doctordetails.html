@@ -1,0 +1,86 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+
+doctordetails  page
+{% endblock title %}
+
+{% block body %}
+
+
+
+<table class="table mt-5 table-dark text-white jumbotron">
+    <thead>
+  
+
+      <tr>
+        <th scope="col">DoctorID</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">DFNAME</th>
+        <th scope="col">DLNAME</th>
+        <th scope="col">DOCTOR GENDER</th>
+        <th scope="col">DOCTOR DEPARTMENT</th>
+        <th scope="col">DEPARTMENRT PHONE NUMBER</th>
+        
+      </tr>
+    </thead>
+   <!-- {% with messages=get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    
+    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+        {{message}}
+    
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+    
+      {% endfor %}
+      {% endif %}
+      {% endwith %}-->
+    <tbody>
+        {% for post in query %}
+
+      
+      <tr>
+        <th scope="row">{{post.doctorid}}</th>
+        <td>{{post.email}}</td>
+        <td>{{post.dname}}</td>
+        <td>{{post.dlname}}</td>
+        <td>{{post.doctor_gender}}</td>
+        <td>{{post.ddept}}</td>
+        <td>{{post.dphno}}</td>
+      
+   <!-- <td><a href="/deletedoctor/{{post.doctorid}}"><button onclick="return confirm('Are you sure to Delete data');" class="btn btn-danger">Delete </button> </a> </td>--> 
+    </tr>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+{% endblock body %}

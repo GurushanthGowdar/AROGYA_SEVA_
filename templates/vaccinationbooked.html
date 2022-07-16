@@ -1,0 +1,113 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+
+vaccine booked
+{% endblock title %}
+
+{% block body %}
+
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+
+
+
+<table class="table mt-5 table-dark text-white jumbotron">
+  {% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+    <thead>
+      <tr>
+        <th scope="col">VId</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">FNAME</th>
+        <th scope="col">LNAME</th>
+        <th scope="col">GENDER</th>
+        <th scope="col">AGE</th>
+        <th scope="col">VACCINE TYPE</th>
+        <th scope="col">DOSE</th>
+        <th scope="col">SLOT</th>
+        <th scope="col">TIME</th>
+        <th scope="col">DATE</th>
+        <th scope="col">PHNO</th>
+        <th scope="col">DELETE</th>
+       <!-- <th scope="col">edit data</th>
+        <th scope="col">delete data</th>-->
+      </tr>
+    </thead>
+    <tbody>
+        {% for post in query %}
+
+      
+      <tr>
+        <th scope="row">{{post.vid}}</th>
+        <td>{{post.email}}</td>
+        <td>{{post.fname}}</td>
+        <td>{{post.lname}}</td>
+        <td>{{post.gender}}</td>
+        <td>{{post.age}}</td>
+        <td>{{post.vaccine}}</td>
+        <td>{{post.dose}}</td>
+        <td>{{post.slot}}</td>
+        <td>{{post.date}}</td>
+        <td>{{post.time}}</td>
+        <td>{{post.phno}}</td>
+        
+
+        <td><a href="/deletevaccine/{{post.vid}}"><button onclick="return confirm('Are you sure to Delete data');" class="btn btn-danger">Delete </button> </a> </td>
+    </tr>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+{% endblock body %}

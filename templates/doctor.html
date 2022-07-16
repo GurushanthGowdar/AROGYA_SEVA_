@@ -1,0 +1,114 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+Add Doctor
+{% endblock title %}
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-1"></div>
+        <div class="col-md-4 mt-5 jumbotron" id="form_entry">
+            {% with messages=get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            
+            <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                {{message}}
+            
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
+            
+              {% endfor %}
+              {% endif %}
+              {% endwith %}
+            
+            <form action="/doctor" method="post">
+
+
+                <h1 class="test-center bg-dark text-white">add doctor details</h1>
+
+                <div class="form-group">
+              
+                  <input type="email" class="form-control" id="email" name="email" placeholder="enter the email">
+                
+                </div>
+              
+                <div class="form-group">
+                
+                  <input type="text" class="form-control" id="dname" name="dname" placeholder="doctor first Name" required>
+                
+                </div>
+              
+                
+
+
+
+                <div class="form-group">
+                
+                    <input type="text" class="form-control" id="dlname" name="dlname" placeholder=" doctor last Name" required>
+                  
+                  </div>
+               <div class="form-group">
+              
+                          
+                                                    
+              <select class="form-control" id="doctor_gender" name="doctor_gender"  required>
+                      <option selected>doctor Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Others">Others</option>
+               
+                    </select>
+               </div>
+               <div class="form-group">
+                
+                <input type="text" class="form-control" id="ddept" name="ddept" placeholder="doctor department name" required>
+              
+              </div>
+           
+         
+                               
+                          
+                                                    
+                <div class="form-group">
+              
+                  <input type="number" class="form-control" id="dphno" name="dphno" placeholder="Phone Number" required>
+                
+                </div>
+              
+                
+                <button type="submit" id="btn" class="btn btn-dark  btn-md btn-block">add</button>
+
+                
+                 <div><a href="/logoutadmin" class="btn btn-danger">Logout</a></div>
+              </form>
+              
+              
+                
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6 mt-3">
+            <div class="card" id="card" style="width: 25rem;">
+                <img src="static/booking.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">“I think health care is more about love than about most other things. If there isn't at the core of these two human beings who have agreed to be in a relationship where one is trying to help relieve the suffering of another, which is love, you can't get to the right answer here.”</p>
+                  <P class="card-text">--- DONALD BERWICK</p>              
+                </div>
+              </div>
+         
+
+              
+
+        </div>
+
+
+
+
+
+
+
+
+{% endblock body %}

@@ -1,0 +1,63 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+
+signup page
+
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-2">
+<div class="row">
+   
+
+
+    <div class="col-md-4"></div>
+    <div class="col-md-4 jumbotron" id="form_entry">
+        
+        <h1 class="text-center bg-secondary text-dark"> sign up here</h1>
+        
+        {% with messages=get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        
+        <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+            {{message}}
+        
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+        <form action="/signup" method="post">
+            <div class="mb-3">
+                <h2><label for="username" class="form-label text-dark">username:</label><h2>
+                <input type="text" class="form-control" placeholder="enter the username"  id="username" name="username" requuired>
+              </div>
+            <div class="mb-3">
+              <h2><label for="email" class="form-label text-dark">Email address:</label></h2>
+              <input type="email" class="form-control" id="email" name="email" placeholder="enter the email address" aria-describedby="emailHelp">
+              
+            </div>
+            <div class="mb-3">
+             <h2><label for="password" class="form-label text-dark">Password</label></h2>
+              <input type="password" class="form-control" placeholder="enter the password" name="password" id="password">
+            </div>
+            <div class="mb-1 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+              <label class="form-check-label" for="exampleCheck1">i agree to recive email if needed </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          already a user <a href="/login">login here</a>
+    </div>
+    <div class="col-md-4"></div>
+
+</div>  
+
+</div>
+{% endblock body %}

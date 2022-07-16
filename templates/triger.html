@@ -1,0 +1,100 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+
+booking page
+{% endblock title %}
+
+{% block body %}
+
+{% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+
+
+
+<table class="table mt-5 table-dark text-white jumbotron">
+  {% with messages=get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category, message in messages %}
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+    <thead>
+      <tr>
+        <th scope="col">TrigerID</th>
+        <th scope="col">PID</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">FNAME</th>
+        <th scope="col">DEPT</th>
+        <th scope="col">ACTION</th>
+        <th scope="col">TIME</th>
+        <th scope="col">DELETE</th>       
+      </tr>
+    </thead>
+    <tbody>
+        {% for post in posts %}
+
+      
+      <tr>
+        <th scope="row">{{post.trigerID}}</th>
+        <td>{{post.pid}}</td>
+        <td>{{post.email}}</td>
+        <td>{{post.fname}}</td>
+        <td>{{post.dept}}</td>
+        <td>{{post.action}}</td>
+        <td>{{post.timestamp}}</td>
+        
+        <td><a href="/deletetriger/{{post.trigerID}}"><button onclick="return confirm('Are you sure to Delete data');" class="btn btn-danger">Delete </button> </a> </td>   
+    </tr>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+{% endblock body %}
