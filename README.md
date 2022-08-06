@@ -4,7 +4,7 @@ For connecting the project to MySQL database the application uses the ORM SqlAlc
 Software required - Xampp server (https://www.apachefriends.org/download.html)
                     VSCode (or any oder IDE which can run python v3)
                     chrome (or any other browser)
-packages need to be downloaded - pip install flask,
+packages need to be downloaded - pip install flask ,
                                  pip install flask_sqlalchemy,
                                  pip install sqlalchemy
                                  pip install flask_login,
